@@ -1,0 +1,27 @@
+{
+    "name": "NSC Testrail Extension",
+    "description": "Extension for replacing test data on test case page", 
+    "browser_action": {
+        "default_icon": {
+            "128": "icon.png"
+            }, 
+        "default_title": "Testrail Extension", 
+        "default_popup": "labnol.html"
+    }, 
+  "content_scripts": [
+	{
+      "matches": ["http://testrail.nsc-tech.ru/*/cases/view/*"],
+      "js": ["contentscript.js"]
+    }
+  ],
+  "web_accessible_resources": ["contentscript.js"],
+  "permissions": [
+    "activeTab"
+  ],
+    "manifest_version": 2,
+    "update_url": "http://clients2.google.com/service/update2/crx",
+    "content_security_policy": "script-src 'self' https://www.google.com; object-src 'self'",
+    "version": "0.1"
+}
+
+
